@@ -1,0 +1,43 @@
+/* Main rules */
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+body {
+    background-color: #f2efe8;
+}
+.headWrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CSS Flexbox */
+
+.flex-container{
+    display:flex;
+    background-color: #dbe9d8;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav a {
+    text-decoration: none;
+    text-align: center;
+    color: #5a5c51;
+    display: block;
+    padding: 10px;
+}
+
+/* Flex styles */
+
+@media screen and (min-width: 768px) {
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
