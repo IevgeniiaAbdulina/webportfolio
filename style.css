@@ -1,33 +1,39 @@
 /* CSS Variables */
 :root {
-    --main-font-family: 'Poppins', sans-serif;
-    --main-bg-color: #f2efe8;
-    --main-txt-color: #1d2120;
+    --header-font-family: 'Poppins', sans-serif;
+    --header-bg-color: #f2efe8;
+    --header-txt-color: #1d2120;
     --secondary-txt-color: #5a5c51;
+    --nav-bg-color: #dbe9d8;
     --nav-txt-color: #3fb0ac;
     --nav-txt-hover: #b56969;
     --nav-font-size: .8em;
     --font-weight-regular: 400;
     --font-weight-bold: 700;
+    --main-bg-color: #fff;
+    --presentation-txt-color: #b0aac2;
 }
 * {
-    font-family: var(--main-font-family);
+    font-family: var(--header-font-family);
     margin: 0;
 }
 body {
-    background: var(--main-bg-color);
-    color: var(--main-txt-color);
+    background: var(--header-bg-color);
+    color: var(--header-txt-color);
     font-size: 14px;
 }
-.wrapper {
+header {
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
+    top: 0;
 }
 
 /* Menu base styles */
 nav {
-    background: transparent;
+    /* background: transparent; */
+    background: var(--nav-bg-color);
+    padding: 20px 0;
     position: relative;
 }
 nav ul {
@@ -42,7 +48,6 @@ nav a {
     font-weight: var(--font-weight-bold);
     display: block;
     padding-left: 60px;
-    width: 100%;
 }
 nav a:hover {
     color: var(--nav-txt-hover);
@@ -58,7 +63,58 @@ color: var(--nav-txt-color);
 font-size: var(--nav-font-size);
 font-weight: var(--font-weight-bold);
 text-transform: uppercase;
-padding-top: 20px;
+}
+
+/* Selected project section */
+main {
+    max-width: 100%;
+    width: 960px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: var(--main-bg-color);
+}
+article h2 {
+    color: var(--secondary-txt-color);
+    font-size: 4em;
+    text-transform: uppercase;
+}
+article h3 {
+    color: var(--secondary-txt-color);
+    font-size: 4em;
+    text-transform: uppercase;
+    line-height: .8em;
+}
+article p {
+    line-height: 2em;
+    color: var(--secondary-txt-color);
+}
+p {
+    box-sizing: content-box;
+    display: block;
+    position: relative;
+    width: 40%;
+    margin: 0 auto;
+}
+
+/* Presentation navigation */
+div.presentation {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+}
+div.presentation ul {
+    list-style-type: none;
+    padding: 0;
+}
+div.presentation li {
+    text-transform: uppercase;
+    color: var(--presentation-txt-color);
+    font-size: var(--nav-font-size);
+    font-weight: var(--font-weight-bold);
+}
+.presentation span {
+    padding-left: 10px;
 }
 
 /* Flex styles */
@@ -66,10 +122,8 @@ nav div.logo {
     display: flex;
     flex: 1 1 0;
 }
-nav div.logo h1 {
-    flex: 1 1 0;
-}
 
+/* For screen > 768px */
 @media screen and (min-width: 768px) {
 
     nav {
@@ -79,9 +133,24 @@ nav div.logo h1 {
 
     nav ul {
         display: flex;
-        align-self: flex-end;
+        align-content: flex-end;
     }
-    nav li {
-        flex: 1 1 0;
+
+    div.presentation ul {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* For screen < 768px */
+@media screen and (max-width: 768px) {
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    div.presentation {
+        display: none;
     }
 }
