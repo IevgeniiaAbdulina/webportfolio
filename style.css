@@ -4,8 +4,16 @@
     font-family: 'Poppins', sans-serif;
     margin: 0;
 }
+
+/* CSS Variables */
+:root {
+    --main-bg-color: #f2efe8;
+    --main-txt-color: #1d2120;
+    --secondary-txt-color: #5a5c51;
+}
+
 body {
-    background-color: #f2efe8;
+    background-color: var(--main-bg-color);
 }
 .headWrapper {
     width: 100%;
@@ -15,6 +23,7 @@ body {
 
 /* CSS Flexbox */
 
+/* Menu bar */
 .flex-container{
     display:flex;
     background-color: #dbe9d8;
@@ -28,14 +37,20 @@ nav ul {
 nav a {
     text-decoration: none;
     text-align: center;
-    color: #5a5c51;
+    color: var(--secondary-txt-color); 
     display: block;
-    padding: 10px;
+    padding-left: 20px;
+}
+
+/* Logo */
+.logo h1  {
+    font-size: 1.143rem;
 }
 
 /* Flex styles */
 
 @media screen and (min-width: 768px) {
+    /* For menu bar */
     nav ul {
         display: flex;
         justify-content: flex-end;
