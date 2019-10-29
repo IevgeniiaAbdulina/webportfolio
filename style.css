@@ -1,23 +1,31 @@
 /* CSS Variables */
 :root {
+    /* Header */
     --header-font-family: 'Poppins', sans-serif;
     --header-bg-color: #f2efe8;
     --header-txt-color: #1d2120;
     --secondary-txt-color: #5a5c51;
+    /* Navigation */
     --nav-bg-color: #dbe9d8;
     --nav-txt-color: #3fb0ac;
     --nav-txt-hover: #b56969;
+    /* Fonts */
     --nav-font-size: .8em;
     --font-weight-regular: 400;
     --font-weight-bold: 700;
+    /* Main section */
     --main-bg-color: #fff;
+    /* Presentation */
     --presentation-txt-color: #b0aac2;
+
 }
 * {
     font-family: var(--header-font-family);
     margin: 0;
 }
 body {
+    width: 100%;
+    max-width: 960px;
     background: var(--header-bg-color);
     color: var(--header-txt-color);
     font-size: 14px;
@@ -32,7 +40,7 @@ header {
 /* Menu base styles */
 nav {
     /* background: transparent; */
-    background: var(--nav-bg-color);
+    /* background: var(--nav-bg-color); */
     padding: 20px 0;
     position: relative;
 }
@@ -70,30 +78,72 @@ main {
     max-width: 100%;
     width: 960px;
     margin: 0 auto;
+    position: relative;
+    display: block;
     box-sizing: border-box;
     background: var(--main-bg-color);
 }
-article h2 {
+.titleWrapper h2 {
     color: var(--secondary-txt-color);
     font-size: 4em;
     text-transform: uppercase;
 }
-article h3 {
+.titleWrapper h3 {
     color: var(--secondary-txt-color);
     font-size: 4em;
     text-transform: uppercase;
     line-height: .8em;
 }
-article p {
+.descriptionWrapper p {
+    max-width: 20em;
     line-height: 2em;
     color: var(--secondary-txt-color);
-}
-p {
-    box-sizing: content-box;
+    box-sizing: border-box;
     display: block;
     position: relative;
-    width: 40%;
+    padding: 20px;
     margin: 0 auto;
+}
+
+/* Project section */
+.project {
+
+}
+.project ul {
+    height: 100%;
+    max-width: 960px;
+    list-style-type: none;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    
+}
+.project ul li {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background: var(--main-bg-color);
+}
+
+.project ul li .left {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    color: var(--secondary-txt-color);
+}
+
+div.illustration {
+    width: 240px;
+    height: 240px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: var(--nav-txt-color);
+    position: relative;
+    padding: 2%;
+    margin: 20px;
 }
 
 /* Presentation navigation */
@@ -102,6 +152,9 @@ div.presentation {
     max-width: 960px;
     margin: 0 auto;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 div.presentation ul {
     list-style-type: none;
