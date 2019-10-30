@@ -7,7 +7,7 @@
     --secondary-txt-color: #5a5c51;
     /* Navigation */
     --nav-bg-color: #dbe9d8;
-    --nav-txt-color: #3fb0ac;
+    --nav-txt-color: #ba9077;
     --nav-txt-hover: #b56969;
     /* Fonts */
     --nav-font-size: .8em;
@@ -16,7 +16,7 @@
     /* Main section */
     --main-bg-color: #fff;
     /* Presentation */
-    --presentation-txt-color: #b0aac2;
+    --presentation-txt-color: #b3c2bf;
 
 }
 * {
@@ -34,13 +34,14 @@ header {
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
-    top: 0;
+    /* position: fixed;
+    z-index: 1;
+    top: 0; */
 }
 
 /* Menu base styles */
 nav {
-    /* background: transparent; */
-    /* background: var(--nav-bg-color); */
+    background: var(--header-bg-color);
     padding: 20px 0;
     position: relative;
 }
@@ -79,8 +80,6 @@ main {
     width: 960px;
     margin: 0 auto;
     position: relative;
-    display: block;
-    box-sizing: border-box;
     background: var(--main-bg-color);
 }
 .titleWrapper h2 {
@@ -106,8 +105,10 @@ main {
 }
 
 /* Project section */
-.project {
-
+div.titleWrapper {
+    position: absolute;
+    left: 0;
+    top: 50%;
 }
 .project ul {
     height: 100%;
@@ -144,6 +145,14 @@ div.illustration {
     position: relative;
     padding: 2%;
     margin: 20px;
+    background: rgba(0, 0, 0, .5) 
+                url("img/orange.jpg") 
+                no-repeat 
+                center / 
+                contain 
+                padding-box 
+                border-box;
+            
 }
 
 /* Presentation navigation */
@@ -158,7 +167,7 @@ div.presentation {
 }
 div.presentation ul {
     list-style-type: none;
-    padding: 0;
+    padding: 20px 0;
 }
 div.presentation li {
     text-transform: uppercase;
