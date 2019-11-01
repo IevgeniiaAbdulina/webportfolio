@@ -155,17 +155,22 @@ nav a:hover {
 }
 
 .description {
-    width: 300px;
     box-sizing: border-box;
-    display: block;
     position: absolute;
     top: 55%;
     margin: 20px 0;
+    animation: an 1s ease-out 1 both;
+    display: inline-block;
 }
 
 .description p {
+    width: 50%;
+    font-size: 1.2em;
+    font-weight: var(--font-weight-regular);
     line-height: 2em;
     color: var(--secondary-txt-color);
+    display: block;
+
 }
 
 .arrow {
@@ -178,7 +183,7 @@ nav a:hover {
     overflow: hidden;
     box-sizing: border-box;
     position: absolute;
-    top: 75%;    
+    top: 80%;    
     margin: 20px 0;
 }
 
@@ -204,5 +209,24 @@ nav a:hover {
     nav ul {
         display: flex;
         flex-wrap: wrap;
+    }
+
+    main {
+        display: flex;
+
+    }
+}
+
+/* Animation styles..................... */
+
+@keyframes an{
+    from{
+        opacity: 0;
+        transform: 
+        perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+    }
+    to{
+        opacity: 1;
+        transform: perspective(500px) translate3d(0, 0, 0);
     }
 }
