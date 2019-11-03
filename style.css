@@ -2,7 +2,7 @@
 
 :root {
     /* Text */
-    --header-txt-color: #1d2120;
+    --main-txt-color: #1d2120;
     --secondary-txt-color: #5a5c51;
 
     /* Navigation */
@@ -14,6 +14,7 @@
     --nav-font-size: .8em;
     --font-weight-regular: 400;
     --font-weight-bold: 700;
+    --font-weight-black: 900;
     --nav-letter-spacing: .12em;
 
     /* Main section */
@@ -33,7 +34,7 @@ body {
     width: 100%;
     max-width: 960px;
     background: var(--main-bg-color);
-    color: var(--header-txt-color);
+    color: var(--main-txt-color);
     font-size: 14px;
 }
 
@@ -60,6 +61,16 @@ color: var(--nav-txt-color);
 font-size: var(--nav-font-size);
 font-weight: var(--font-weight-bold);
 text-transform: uppercase;
+}
+
+.logo a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--nav-txt-color);
+    font-size: 1em;
+    font-weight: var(--font-weight-bold);
+    display: block;
+    padding-left: 0;
 }
 
 /* Navigation styles.................... */
@@ -95,7 +106,8 @@ nav a:hover {
 .main {
     display: flex;
     height: 100vh;
-    padding: 57px 0;
+    padding: 10px 0;
+    margin: 55px 0;
 }
 
 .left {
@@ -104,14 +116,14 @@ nav a:hover {
     background-color: var(--main-bg-color);
     justify-content: center;
     align-items: center;
-    height: 80%;
+    height: 85vh;
 }
 
 .right {
     flex: 3;
     position: relative;
     background-color: var(--right-bg-color);
-    height: 80%;
+    height: 85vh;
 }
 
 .image {
@@ -140,17 +152,20 @@ nav a:hover {
     position: absolute;
     top: 15%;
     margin: 20px 0;
+    animation: an 1s ease-out 1 both;
 }
 
 .title h1 {
     color: var(--secondary-txt-color);
     font-size: 4em;
+    font-weight: var(--font-weight-bold);
     text-transform: uppercase;
 }
 
 .title h2 {
     color: var(--secondary-txt-color);
     font-size: 4em;
+    font-weight: var(--font-weight-bold);
     text-transform: uppercase;
 }
 
@@ -159,7 +174,6 @@ nav a:hover {
     position: absolute;
     top: 55%;
     margin: 20px 0;
-    animation: an 1s ease-out 1 both;
     display: inline-block;
 }
 
@@ -169,7 +183,7 @@ nav a:hover {
     line-height: 2em;
     color: var(--secondary-txt-color);
     display: block;
-
+    animation: an 1s ease-out 1 both;
 }
 
 .arrow {
@@ -209,31 +223,227 @@ nav a:hover {
         display: flex;
         flex-wrap: wrap;
     }
+    
+}
 
-    main {
-        display: flex;
 
+/* Bootstrap style................. */
+
+@media (min-width: 768px) and (max-width: 1000px) {
+    .collapse {
+        display: none !important;
     }
-
-    /* Bootstrap style................. */
-
-    /* @media (min-width: 768px) and (max-width: 1000px) {
-        .collapse {
-            display: none !important;
-        }
-     } */
 }
 
 /* Animation styles..................... */
 
-@keyframes an{
-    from{
+@keyframes an {
+    from {
         opacity: 0;
         transform: 
         perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
     }
-    to{
+    to {
         opacity: 1;
         transform: perspective(500px) translate3d(0, 0, 0);
     }
+}
+
+/* BOOTSTRAP................ */
+
+.my-navbar {
+    background-color: transparent !important;
+    padding: 20px 0 !important;
+}
+
+.my-navbar h1 {
+    color: var(--nav-txt-color) !important;
+}
+
+.my-navbar a {
+    color: var(--nav-txt-color) !important;
+}
+.my-navbar a:hover {
+    color: var(--nav-txt-hover) !important;
+}
+a.nav-link {
+    padding: 0 !important;
+    padding-left: 60px !important;
+}
+
+/* ABOUT ME PAGE .......................*/
+
+.about {
+    margin: 100px 0;
+}
+
+.about-title {
+    margin-bottom: 30px;
+}
+
+.about-title h1 {
+    color: var(--secondary-txt-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 2.4em;
+    font-weight: var(--font-weight-bold);
+}
+
+.info p {
+    margin: auto;
+    color: var(--secondary-txt-color);
+    line-height: 2em;
+    font-size: 1.14em;
+}
+
+/* CONTACT PAGE............................. */
+
+div.contac-container {
+    background: var(--main-txt-color);
+}
+.contact {
+    margin: 80px 16px;
+    padding: 30px;
+}
+
+.contact-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-title h1 {
+    color: var(--nav-txt-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+}
+.form-container {
+    background: transparent;
+    max-width: 550px;
+    margin: auto;
+    
+}
+
+form {
+    padding-bottom: 16px;
+    display: block;
+    width: 100%;
+}
+
+.form-name, 
+.form-email, 
+.form-message {
+    position: relative;
+}
+
+.form-name::before {
+    content: "\f007";
+    color: #ddd;
+    font-family: 'fontAwesome';
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.form-email::before {
+    content: "\f1d8";
+    color: #ddd;
+    font-family: 'fontAwesome';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    
+}
+
+.form-message::before {
+    content: "\f0e0";
+    color: #ddd;
+    font-family: 'fontAwesome';
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+form input:focus, 
+form textarea:focus, 
+form input:hover, 
+form textarea:hover {
+    border-color: var(--nav-txt-hover);
+}
+
+form textarea {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--nav-txt-color);
+    transition: .2s;
+    margin-top: 16px;
+    height: 150px;
+    background-color: transparent;
+    padding: 10px 16px 10px 30px;
+    color: var(--nav-txt-color);
+}
+
+form input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--nav-txt-color);
+    transition: .2s;
+    outline: none;
+    margin-top: 16px;
+    background-color: transparent;
+    position: relative;
+    padding: 10px 16px 10px 30px;
+    color: var(--nav-txt-color);
+}
+
+form button {
+    border: 1px solid var(--main-bg-color);
+    transition: .2s;
+    padding: 10px 30px;
+    outline: none;
+    margin-top: 30px;
+    cursor: pointer;
+    background-color: var(--nav-txt-hover);;
+    text-transform: uppercase;
+    font-size: .8em;
+    color: var(--main-bg-color);
+}
+
+.center-align {
+    text-align: center;
+    
+}
+
+/* PORTFOLIO PAGE.................... */
+
+.gallery {
+    margin: 100px auto;
+    text-align: center;
+    font-family: var(--main-font-family);
+}
+.gallery-title h1 {
+    margin-top: 100px;
+    color: var(--secondary-txt-color);
+    text-transform: uppercase;
+    font-size: 2.4em;
+    font-weight: var(--font-weight-bold);
+}
+
+.gallery p {
+    margin-bottom: 30px;
+    color: var(--secondary-txt-color);
+    margin-top: 20px;
+    font-size: 1.14em;
+    font-weight: var(--font-weight-regular);
+    line-height: 2em;
+}
+
+.galery img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery figcaption {
+    margin: 30px 0;
 }

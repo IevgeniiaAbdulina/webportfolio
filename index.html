@@ -9,26 +9,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+
 </head>
 
 <body>
 
     <header>
-        <nav class="navbar nav">
+
+        <!-- Nav BOOTSTRAP.................... -->
+        <nav class="navbar navbar-light bg-light navbar-expand-lg my-navbar">
+
             <div class="logo">
-                <h1>Ievgeniia Abdulina</h1>
+                <h1 class="navbar-brand"><a href="index.html">Ievgeniia Abdulina</a></h1> 
             </div>
-            <button></button>
-            <div>
-                <ul>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">About me</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="navbar-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li class="navbar-item"><a href="about.html" class="nav-link">About me</a></li>
+                    <li class="navbar-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </div>
         </nav>
+
     </header>
 
     <!-- Main section........................... -->
@@ -48,7 +57,7 @@
                 <br>Aliquam ultricies velit mauris.</p>
             </div>
 
-            <a class="arrow" href="graphic.html"></a>
+            <a class="arrow" href="portfolio.html"></a>
 
         </div>
 
