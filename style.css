@@ -1,58 +1,449 @@
-/* Main rules */
+/* CSS Variables...................... */
 
-* {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-}
-
-/* CSS Variables */
 :root {
-    --main-bg-color: #f2efe8;
+    /* Text */
     --main-txt-color: #1d2120;
     --secondary-txt-color: #5a5c51;
+
+    /* Navigation */
+    --nav-txt-color: #ba9077;
+    --nav-txt-hover: #b56969;
+
+    /* Fonts */
+    --main-font-family: 'Poppins', sans-serif;
+    --nav-font-size: .8em;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+    --nav-letter-spacing: .12em;
+
+    /* Main section */
+    --main-bg-color: #fff;
+    --right-bg-color: #dbe9d8;
 }
 
+/* Page styles....................... */
+
+* {
+    font-family: var(--main-font-family);
+    margin: 0;
+}
 body {
-    background-color: var(--main-bg-color);
-}
-.headWrapper {
-    width: 100%;
-    max-width: 1200px;
+    height: 100vh;
     margin: 0 auto;
+    width: 100%;
+    max-width: 960px;
+    background: var(--main-bg-color);
+    color: var(--main-txt-color);
+    font-size: 14px;
 }
 
-/* CSS Flexbox */
-
-/* Menu bar */
-.flex-container{
-    display:flex;
-    background-color: #dbe9d8;
-    flex-wrap: wrap;
-    justify-content: space-between;
+header {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 1;
+    top: 0;
 }
+
+/* Logo style...................... */
+
+.logo {
+    min-width: 120px;
+    margin: 0 auto;
+    display: flex;
+    flex: 1 1 0;
+}
+
+.logo h1 {
+color: var(--nav-txt-color);
+font-size: var(--nav-font-size);
+font-weight: var(--font-weight-bold);
+text-transform: uppercase;
+}
+
+.logo a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--nav-txt-color);
+    font-size: 1em;
+    font-weight: var(--font-weight-bold);
+    display: block;
+    padding-left: 0;
+}
+
+/* Navigation styles.................... */
+
+nav {
+    padding: 20px 0;
+    position: relative;
+    background: transparent;
+    letter-spacing: var(--nav-letter-spacing);
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
 }
+
 nav a {
     text-decoration: none;
-    text-align: center;
-    color: var(--secondary-txt-color); 
+    text-transform: uppercase;
+    color: var(--nav-txt-color);
+    font-size: var(--nav-font-size);
+    font-weight: var(--font-weight-bold);
     display: block;
-    padding-left: 20px;
+    padding-left: 60px;
 }
 
-/* Logo */
-.logo h1  {
-    font-size: 1.143rem;
+nav a:hover {
+    color: var(--nav-txt-hover);
 }
 
-/* Flex styles */
+/* Main section................... */
+
+.main {
+    display: flex;
+    height: 100vh;
+    padding: 10px 0;
+    margin: 55px 0;
+}
+
+.left {
+    flex: 4;
+    position: relative;
+    background-color: var(--main-bg-color);
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+
+.right {
+    flex: 3;
+    position: relative;
+    background-color: var(--right-bg-color);
+    height: 85vh;
+}
+
+.image {
+    height: 280px;
+    width: 280px;
+    position: absolute;
+    background-color: #fff;
+    top: 45%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    margin: 20px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .5) 
+                url("img/orange.jpg") 
+                no-repeat 
+                center / 
+                contain 
+                padding-box 
+                border-box;
+}
+
+/* Left section style ------------------ */
+
+.title {
+    display: block;
+    position: absolute;
+    top: 15%;
+    margin: 20px 0;
+    animation: an 1s ease-out 1 both;
+}
+
+.title h1 {
+    color: var(--secondary-txt-color);
+    font-size: 4em;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+}
+
+.title h2 {
+    color: var(--secondary-txt-color);
+    font-size: 4em;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+}
+
+.description {
+    box-sizing: border-box;
+    position: absolute;
+    top: 55%;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.description p {
+    font-size: 1.2em;
+    font-weight: var(--font-weight-regular);
+    line-height: 2em;
+    color: var(--secondary-txt-color);
+    display: block;
+    animation: an 1s ease-out 1 both;
+}
+
+.arrow {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(img/arrow_forward-24px.svg) 
+                no-repeat 
+                right;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: absolute;
+    top: 80%;    
+    margin: 20px 0;
+}
+
+/* For screen > 768px */
 
 @media screen and (min-width: 768px) {
-    /* For menu bar */
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
     nav ul {
         display: flex;
-        justify-content: flex-end;
+        align-content: flex-end;
     }
+}
+
+/* For screen < 768px */
+
+@media screen and (max-width: 768px) {
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+}
+
+
+/* Bootstrap style................. */
+
+@media (min-width: 768px) and (max-width: 1000px) {
+    .collapse {
+        display: none !important;
+    }
+}
+
+/* Animation styles..................... */
+
+@keyframes an {
+    from {
+        opacity: 0;
+        transform: 
+        perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(500px) translate3d(0, 0, 0);
+    }
+}
+
+/* BOOTSTRAP................ */
+
+.my-navbar {
+    background-color: transparent !important;
+    padding: 20px 0 !important;
+}
+
+.my-navbar h1 {
+    color: var(--nav-txt-color) !important;
+}
+
+.my-navbar a {
+    color: var(--nav-txt-color) !important;
+}
+.my-navbar a:hover {
+    color: var(--nav-txt-hover) !important;
+}
+a.nav-link {
+    padding: 0 !important;
+    padding-left: 60px !important;
+}
+
+/* ABOUT ME PAGE .......................*/
+
+.about {
+    margin: 100px 0;
+}
+
+.about-title {
+    margin-bottom: 30px;
+}
+
+.about-title h1 {
+    color: var(--secondary-txt-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 2.4em;
+    font-weight: var(--font-weight-bold);
+}
+
+.info p {
+    margin: auto;
+    color: var(--secondary-txt-color);
+    line-height: 2em;
+    font-size: 1.14em;
+}
+
+/* CONTACT PAGE............................. */
+
+div.contac-container {
+    background: var(--main-txt-color);
+}
+.contact {
+    margin: 80px 16px;
+    padding: 30px;
+}
+
+.contact-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-title h1 {
+    color: var(--nav-txt-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+}
+.form-container {
+    background: transparent;
+    max-width: 550px;
+    margin: auto;
+    
+}
+
+form {
+    padding-bottom: 16px;
+    display: block;
+    width: 100%;
+}
+
+.form-name, 
+.form-email, 
+.form-message {
+    position: relative;
+}
+
+.form-name::before {
+    content: "\f007";
+    color: #ddd;
+    font-family: 'fontAwesome';
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.form-email::before {
+    content: "\f1d8";
+    color: #ddd;
+    font-family: 'fontAwesome';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    
+}
+
+.form-message::before {
+    content: "\f0e0";
+    color: #ddd;
+    font-family: 'fontAwesome';
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+form input:focus, 
+form textarea:focus, 
+form input:hover, 
+form textarea:hover {
+    border-color: var(--nav-txt-hover);
+}
+
+form textarea {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--nav-txt-color);
+    transition: .2s;
+    margin-top: 16px;
+    height: 150px;
+    background-color: transparent;
+    padding: 10px 16px 10px 30px;
+    color: var(--nav-txt-color);
+}
+
+form input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--nav-txt-color);
+    transition: .2s;
+    outline: none;
+    margin-top: 16px;
+    background-color: transparent;
+    position: relative;
+    padding: 10px 16px 10px 30px;
+    color: var(--nav-txt-color);
+}
+
+form button {
+    border: 1px solid var(--main-bg-color);
+    transition: .2s;
+    padding: 10px 30px;
+    outline: none;
+    margin-top: 30px;
+    cursor: pointer;
+    background-color: var(--nav-txt-hover);;
+    text-transform: uppercase;
+    font-size: .8em;
+    color: var(--main-bg-color);
+}
+
+.center-align {
+    text-align: center;
+    
+}
+
+/* PORTFOLIO PAGE.................... */
+
+.gallery {
+    margin: 100px auto;
+    text-align: center;
+    font-family: var(--main-font-family);
+}
+.gallery-title h1 {
+    margin-top: 100px;
+    color: var(--secondary-txt-color);
+    text-transform: uppercase;
+    font-size: 2.4em;
+    font-weight: var(--font-weight-bold);
+}
+
+.gallery p {
+    margin-bottom: 30px;
+    color: var(--secondary-txt-color);
+    margin-top: 20px;
+    font-size: 1.14em;
+    font-weight: var(--font-weight-regular);
+    line-height: 2em;
+}
+
+.galery img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery figcaption {
+    margin: 30px 0;
 }

@@ -1,72 +1,75 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+
 </head>
+
 <body>
-    <!-- Header section -->
-    <div class="headWrapper">
-        <header class="flex-container">
-            <!-- Logo -->
+
+    <header>
+
+        <!-- Nav BOOTSTRAP.................... -->
+        <nav class="navbar navbar-light bg-light navbar-expand-lg my-navbar">
+
             <div class="logo">
-                <h1>Ievgeniia Abdulina</h1>
+                <h1 class="navbar-brand"><a href="index.html">Ievgeniia Abdulina</a></h1> 
             </div>
-            <!-- Menu bar -->
-            <nav class="menu">
-                <ul class="menuItems"> 
-                    <li class="menuItem">
-                        <a href="">Portfolio</a>
-                    </li>
-                    <li class="menuItem">
-                        <a href="">About me</a>
-                    </li>
-                    <li class="menuItem">
-                        <a href="">Contact</a>
-                    </li>
+
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="navbar-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li class="navbar-item"><a href="about.html" class="nav-link">About me</a></li>
+                    <li class="navbar-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
-            </nav>
-        </header>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- Main section........................... -->
+    <div class="main">
+
+        <!-- Left................................... -->
+        <div class="left">
+
+            <div class="title">
+                <h1>Graphic</h1>
+                <h2>Design</h2>   
+            </div>
+
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet, 
+                <br>consectetur adipiscing elit. 
+                <br>Aliquam ultricies velit mauris.</p>
+            </div>
+
+            <a class="arrow" href="portfolio.html"></a>
+
+        </div>
+
+        <!-- Rigth.............................. -->
+        <div class="right">
+            <div class="image"></div>
+        </div>
+
     </div>
-    <main>
-        <section class="container">
-            <div id="home">
-                <!-- Short description of selected project -->
-                <div class="ptojects">
-                    <div class="left">
-                        <div class="projectTitle">
-                            <h1>01 Project Title</h1>
-                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie felis in viverra porta. </p>
-                            <a href="" class="arrowLink">
-                                <img src="" alt="arrow icon">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="illusration">
-                        <img src="" alt="image project">
-                    </div>
-                </div>
-                <!-- Project list navigation -->
-                <ul class="nav">
-                    <li>01
-                        <span>Project</span>
-                    </li>
-                    <li>02
-                        <span>Project</span>
-                    </li>
-                    <li>03
-                        <span>Project</span>
-                    </li>
-                    <li>04
-                        <span>Project</span>
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
